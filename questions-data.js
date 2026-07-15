@@ -73,7 +73,7 @@ D. Bảo đảm cho việc thực thi quyền làm chủ của người dân
 👉 Đáp án đúng: C
 
 Câu hỏi 9
-Trên cơ sở của chủ nghĩa Mác - Lênin và điều kiện cụ thể của Việt Nam, Chủ tịch Hồ ChíMình đã phát triển dân chủ theo hướng Dân chủ trước hết là một giá trị nhân loại chung. Và, khi coi dân chủ là một thể chế chính trị, một chế độ xã hội, Người khẳng định:
+Trên cơ sở của chủ nghĩa Mác - Lênin và điều kiện cụ thể của Việt Nam, Chủ tịch Hồ Chí Minh đã phát triển dân chủ theo hướng Dân chủ trước hết là một giá trị nhân loại chung. Và, khi coi dân chủ là một thể chế chính trị, một chế độ xã hội, Người khẳng định:
 A. Chính quyền dân chủ có nghĩa là chính quyền do người dân làm chủ
 B. Chính phủ là người đầy tớ trung thành của nhân dân
 C. Chế độ ta là chế độ dân chủ, tức là nhân dân là người chủ
