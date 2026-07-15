@@ -212,9 +212,12 @@ async function initQuestionsBank() {
 
     let questions = [];
     try {
-        const res = await fetch('docs/quiz_75cau_dapan.txt', { cache: 'no-cache' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const txt = await res.text();
+        let txt = (typeof window.QUIZ_BANK_TEXT === 'string') ? window.QUIZ_BANK_TEXT : '';
+        if (!txt) {
+            const res = await fetch('docs/quiz_75cau_dapan.txt', { cache: 'no-cache' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            txt = await res.text();
+        }
         questions = parseQuizTxt(txt);
     } catch (err) {
         if (loading) loading.hidden = true;
@@ -279,9 +282,12 @@ async function initQuizPage() {
 
     let questions = [];
     try {
-        const res = await fetch('docs/quiz_75cau_dapan.txt', { cache: 'no-cache' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const txt = await res.text();
+        let txt = (typeof window.QUIZ_BANK_TEXT === 'string') ? window.QUIZ_BANK_TEXT : '';
+        if (!txt) {
+            const res = await fetch('docs/quiz_75cau_dapan.txt', { cache: 'no-cache' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            txt = await res.text();
+        }
         questions = parseQuizTxt(txt);
     } catch (err) {
         console.error('Quiz: không tải được ngân hàng câu hỏi:', err);
