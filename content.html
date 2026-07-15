@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nội dung ôn tập - CNXHKH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <span class="brand-icon">★</span>
+                <span class="brand-text">CNXHKH</span>
+            </div>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Trang chủ</span>
+            </a>
+            <div class="nav-group">
+                <a href="content.html" class="nav-item active has-submenu" onclick="toggleChapterMenu(event)">
+                    <span class="nav-icon">📖</span>
+                    <span class="nav-text">Nội dung ôn tập</span>
+                    <span class="nav-arrow" id="chapterArrow">▼</span>
+                </a>
+                <div class="submenu" id="chapterSubmenu">
+                    <a href="content.html#chapter1" class="submenu-item">Chương 1: Nhập môn</a>
+                    <a href="content.html#chapter2" class="submenu-item">Chương 2: Sứ mệnh GCCN</a>
+                    <a href="content.html#chapter3" class="submenu-item">Chương 3: CNXH và TKQĐ</a>
+                    <a href="content.html#chapter4" class="submenu-item">Chương 4: Dân chủ XHCN</a>
+                    <a href="content.html#chapter5" class="submenu-item">Chương 5: Cơ cấu XH-GC</a>
+                    <a href="content.html#chapter6" class="submenu-item">Chương 6: Dân tộc, Tôn giáo</a>
+                    <a href="content.html#chapter7" class="submenu-item">Chương 7: Gia đình</a>
+                </div>
+            </div>
+            <a href="questions.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Ngân hàng câu hỏi</span>
+            </a>
+            <a href="quiz.html" class="nav-item">
+                <span class="nav-icon">✍️</span>
+                <span class="nav-text">Quiz</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <p>FPT University</p>
+            <p>MLN131</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="mobile-title">CNXHKH</span>
+        </header>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1>Nội dung ôn tập</h1>
+                <p>Tổng hợp kiến thức từ 7 chương theo cấu trúc giáo trình</p>
+            </div>
+        </header>
+
+        <!-- Content Container -->
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- Slide Overview -->
+                <div class="slide-image">
+                    <img src="image/preview.png" alt="Chương trình CNXHKH" loading="lazy">
+                    <p class="image-caption">Tổng quan chương trình CNXHKH - 7 Chương</p>
+                </div>
+
+                <!-- Chapter Navigation -->
+                <nav class="chapter-nav">
+                    <a href="#chapter1" class="chapter-nav-item">Chương 1</a>
+                    <a href="#chapter2" class="chapter-nav-item">Chương 2</a>
+                    <a href="#chapter3" class="chapter-nav-item">Chương 3</a>
+                    <a href="#chapter4" class="chapter-nav-item">Chương 4</a>
+                    <a href="#chapter5" class="chapter-nav-item">Chương 5</a>
+                    <a href="#chapter6" class="chapter-nav-item">Chương 6</a>
+                    <a href="#chapter7" class="chapter-nav-item">Chương 7</a>
+                </nav>
+
+                <!-- Chapter 1 -->
+                <article id="chapter1" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 1</span>
+                        <h2>Nhập môn Chủ nghĩa Xã hội Khoa học</h2>
+                    </div>
+
+                    <!-- Slide Chapter 1 -->
+                    <div class="slide-image">
+                        <img src="image/preview1.png" alt="Chương 1" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Sự ra đời của CNXHKH</h3>
+                        
+                        <!-- Slide Bài 1 -->
+                        <div class="slide-image">
+                            <img src="image/preview2.png" alt="Sự ra đời CNXHKH" loading="lazy">
+                        </div>
+                        
+                        <div class="topic">
+                            <h4>1. Hoàn cảnh lịch sử ra đời CNXHKH</h4>
+                            
+                            <div class="info-cards">
+                                <div class="info-card economic">
+                                    <h5>Về kinh tế</h5>
+                                    <p>Vào những năm 40 (thế kỷ XIX), nền đại công nghiệp hình thành và phát triển mạnh mẽ. Mâu thuẫn giữa <strong>Lực lượng sản xuất</strong> và <strong>Quan hệ sản xuất</strong> dẫn đến khủng hoảng kinh tế.</p>
+                                </div>
+                                <div class="info-card social">
+                                    <h5>Về xã hội</h5>
+                                    <p>GCCN tăng nhanh nhưng bị bóc lột nặng nề. Mâu thuẫn <strong>GCCN >< GCTS</strong> gay gắt. Phong trào công nhân phát triển nhanh, mang tính chính trị công khai.</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide Tiền đề khoa học -->
+                            <div class="slide-image">
+                                <img src="image/preview4.png" alt="Tiền đề khoa học" loading="lazy">
+                            </div>
+
+                            <div class="sub-topic">
+                                <h5>Tiền đề khoa học tự nhiên và tư tưởng lý luận</h5>
+                                <div class="two-columns">
+                                    <div class="col">
+                                        <h6>Tiền đề khoa học tự nhiên</h6>
+                                        <ul>
+                                            <li><strong>Học thuyết tiến hóa</strong> (Darwin, 1859)</li>
+                                            <li><strong>Định luật bảo toàn và chuyển hóa năng lượng</strong></li>
+                                            <li><strong>Học thuyết tế bào</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Tiền đề tư tưởng lý luận</h6>
+                                        <ul>
+                                            <li><strong>Triết học cổ điển Đức:</strong> Héghen, Phoiơbéc</li>
+                                            <li><strong>Kinh tế chính trị cổ điển Anh:</strong> Smith, Ricardo</li>
+                                            <li><strong>CNXH không tưởng Pháp:</strong> Xanh Ximông, Phurié, R. Oen</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="highlight-box">
+                                <h5>Giá trị của CNXH không tưởng Pháp</h5>
+                                <ul>
+                                    <li>Thể hiện <strong>tinh thần phê phán</strong>, lên án chế độ quân chủ chuyên chế và TBCN đầy bất công</li>
+                                    <li>Đưa ra nhiều <strong>luận điểm có giá trị</strong> về xã hội tương lai</li>
+                                    <li>Đã thức tỉnh giai cấp công nhân và người lao động</li>
+                                </ul>
+                                <div class="note">
+                                    <strong>Lưu ý:</strong> CNXH không tưởng có hạn chế: không phát hiện quy luật vận động xã hội, không tìm ra lực lượng xã hội tạo ra xã hội mới.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Vai trò của C. Mác và Ph. Ăngghen</h4>
+                            
+                            <!-- Slide Vai trò Mác và Ăngghen -->
+                            <div class="slide-image">
+                                <img src="image/preview9.png" alt="Vai trò C. Mác và Ph. Ăngghen" loading="lazy">
+                            </div>
+                            
+                            <div class="sub-topic">
+                                <h5>Sự chuyển biến lập trường (1843-1844)</h5>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <span class="time">1843-1844</span>
+                                        <p><strong>C. Mác:</strong> "Góp phần phê phán triết học Pháp quyền của Hêghen"</p>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="time">1843</span>
+                                        <p><strong>Ph. Ăngghen:</strong> "Tình cảnh nước Anh", "Lược khảo Kinh tế chính trị"</p>
+                                    </div>
+                                </div>
+                                <div class="result-box">
+                                    <span>→</span>
+                                    <p>Chuyển từ <em>duy tâm</em> → <em>duy vật</em>, từ <em>cách mạng dân chủ</em> → <em>lập trường Cộng sản chủ nghĩa</em></p>
+                                </div>
+                            </div>
+
+                            <!-- Slide Ba phát kiến vĩ đại -->
+                            <div class="slide-image">
+                                <img src="image/preview5.png" alt="Ba phát kiến vĩ đại" loading="lazy">
+                            </div>
+
+                            <div class="sub-topic">
+                                <h5>Ba phát kiến vĩ đại</h5>
+                                <div class="discoveries">
+                                    <div class="discovery">
+                                        <span class="num">1</span>
+                                        <h6>CN duy vật lịch sử</h6>
+                                        <p>Phát hiện quy luật vận động và phát triển của xã hội loài người</p>
+                                    </div>
+                                    <div class="discovery">
+                                        <span class="num">2</span>
+                                        <h6>Học thuyết giá trị thặng dư</h6>
+                                        <p>Giải thích cơ chế bóc lột trong TBCN và sự suy vong tất yếu của nó</p>
+                                    </div>
+                                    <div class="discovery">
+                                        <span class="num">3</span>
+                                        <h6>Sứ mệnh lịch sử GCCN</h6>
+                                        <p>Phát hiện vai trò lịch sử toàn thế giới của giai cấp công nhân</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide Tuyên ngôn Đảng Cộng sản -->
+                            <div class="slide-image">
+                                <img src="image/preview6.png" alt="Tuyên ngôn Đảng Cộng sản 1848" loading="lazy">
+                            </div>
+
+                            <div class="sub-topic">
+                                <h5>Tuyên ngôn Đảng Cộng sản (tháng 2/1848)</h5>
+                                <div class="manifesto">
+                                    <p>Tác phẩm đánh dấu sự ra đời của CNXHKH với các luận điểm cốt lõi:</p>
+                                    <ol>
+                                        <li>GCCN không thể giải phóng mình nếu không giải phóng toàn xã hội</li>
+                                        <li>Sự sụp đổ tất yếu của CNTB và thắng lợi của CNXH</li>
+                                        <li>GCCN có sứ mệnh thủ tiêu CNTB và xây dựng CNXH</li>
+                                        <li>Người cộng sản phải liên minh các lực lượng dân chủ</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide Quá trình phát triển -->
+                    <div class="slide-image">
+                        <img src="image/preview10.png" alt="Quá trình phát triển CNXHKH" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Các giai đoạn phát triển cơ bản của CNXHKH</h3>
+
+                        <div class="timeline-full">
+                            <div class="timeline-block">
+                                <h4>C. Mác và Ph. Ăngghen</h4>
+                                <div class="timeline-item">
+                                    <span class="period">1848 - 1871</span>
+                                    <div>
+                                        <h6>Trước Công xã Pari</h6>
+                                        <p>Tổng kết kinh nghiệm phong trào 1848-1851 qua các tác phẩm: "Đấu tranh giai cấp ở Pháp", "Ngày 18 tháng Sương mù...", "Chiến tranh nông dân ở Đức".</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="period">1871 - 1895</span>
+                                    <div>
+                                        <h6>Sau Công xã Pari đến 1895</h6>
+                                        <p>Tổng kết kinh nghiệm Công xã Pari, hoàn tất bộ "Tư bản" (1867).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-block">
+                                <h4>V.I. Lênin</h4>
+                                <div class="timeline-item">
+                                    <span class="period">Trước 1917</span>
+                                    <div>
+                                        <h6>Trước Cách mạng Tháng Mười</h6>
+                                        <p>Làm CNXHKH trở thành hiện thực, phát triển lý luận về CM dân chủ tư sản kiểu mới, Đảng kiểu mới của GCCN.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="period">1917 - 1924</span>
+                                    <div>
+                                        <h6>Sau Cách mạng Tháng Mười</h6>
+                                        <p>Giải quyết các vấn đề chính trị, kinh tế, văn hóa, giáo dục và xây dựng CNXH.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-block">
+                                <h4>Sau V.I. Lênin đến nay</h4>
+                                <div class="timeline-item">
+                                    <span class="period">1924 - 1991</span>
+                                    <div>
+                                        <h6>Thời kỳ Xtalin và trước khi sụp đổ</h6>
+                                        <p>Hình thành "CN Mác-Lênin". Cuối thập niên 80 - đầu 90: Mô hình XHCN ở Liên Xô và Đông Âu sụp đổ.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="period">1991 - nay</span>
+                                    <div>
+                                        <h6>Từ năm 1991 đến nay</h6>
+                                        <p><strong>Trung Quốc:</strong> Cải cách mở cửa 1978. <strong>Việt Nam:</strong> Đổi mới 1986, khẳng định CNXH là quy luật tất yếu.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. Đối tượng, phương pháp và ý nghĩa nghiên cứu</h3>
+
+                        <div class="topic">
+                            <h4>Đối tượng nghiên cứu</h4>
+                            <div class="definition">
+                                <p>Là những <strong>quy luật, tính quy luật chính trị - xã hội</strong> của quá trình phát sinh, hình thành và phát triển của hình thái KT-XH CSCN; những nguyên tắc, con đường và hình thức đấu tranh cách mạng của GCCN.</p>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Phương pháp nghiên cứu</h4>
+                            <div class="methods">
+                                <span>Kết hợp lịch sử - logic</span>
+                                <span>Khảo sát phân tích chính trị - xã hội</span>
+                                <span>So sánh</span>
+                                <span>Liên ngành</span>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Ý nghĩa nghiên cứu</h4>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Về lý luận</h5>
+                                    <ul>
+                                        <li>Trang bị nhận thức chính trị - xã hội</li>
+                                        <li>Phương pháp luận khoa học</li>
+                                        <li>Vũ khí lý luận của GCCN và Đảng</li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>Về thực tiễn</h5>
+                                    <ul>
+                                        <li>Hiểu sự sụp đổ XHCN ở Liên Xô, Đông Âu</li>
+                                        <li>Củng cố bản lĩnh kiên định</li>
+                                        <li>Tiếp tục xây dựng Tổ quốc theo định hướng XHCN</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="warning-box">
+                                <strong>Nguyên nhân sụp đổ:</strong> Do giáo điều, chủ quan duy ý chí, xuất hiện chủ nghĩa cơ hội - phản bội và sự phá hoại của đế quốc.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chapter 2 -->
+                <article id="chapter2" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 2</span>
+                        <h2>Sứ mệnh lịch sử của Giai cấp Công nhân</h2>
+                    </div>
+
+                    <!-- Slide Chương 2 -->
+                    <div class="slide-image">
+                        <img src="image/p12.png" alt="Chương 2 - Sứ mệnh GCCN" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Quan điểm cơ bản của CN Mác-Lênin</h3>
+
+                        <div class="topic">
+                            <h4>1. Khái niệm Giai cấp công nhân (GCCN)</h4>
+                            <div class="definition">
+                                <p><strong>GCCN</strong> là một tập đoàn xã hội ổn định, hình thành và phát triển cùng nền công nghiệp hiện đại; đại diện cho lực lượng sản xuất tiên tiến; là lực lượng chủ yếu của tiến trình quá độ từ CNTB lên CNXH.</p>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Đặc điểm của GCCN</h4>
+
+                            <!-- Slide Đặc điểm GCCN -->
+                            <div class="slide-image">
+                                <img src="image/p11.png" alt="Đặc điểm GCCN" loading="lazy">
+                            </div>
+
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Về kinh tế - xã hội</h5>
+                                    <ul>
+                                        <li>Vận hành công cụ sản xuất công nghiệp hiện đại</li>
+                                        <li>Không sở hữu tư liệu sản xuất chủ yếu</li>
+                                        <li>Bị bóc lột giá trị thặng dư</li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>Về chính trị - xã hội</h5>
+                                    <ul>
+                                        <li>Sản phẩm của đại công nghiệp</li>
+                                        <li>Tính tổ chức, kỷ luật cao</li>
+                                        <li>Tinh thần hợp tác và cách mạng triệt để</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Sứ mệnh lịch sử của GCCN</h4>
+                            <div class="highlight-box">
+                                <h5>Mục tiêu tổng quát</h5>
+                                <p>Thông qua <strong>Đảng Cộng sản</strong>, lật đổ CNTB, xóa bỏ chế độ người bóc lột người, giải phóng GCCN và nhân dân, xây dựng XHCN và CNCS.</p>
+                            </div>
+                            <div class="definition">
+                                <h5>Đặc điểm sứ mệnh</h5>
+                                <ul>
+                                    <li>Xuất phát từ tiền đề sản xuất xã hội hóa</li>
+                                    <li>Là sự nghiệp của GCCN mang lại lợi ích cho đa số</li>
+                                    <li>Nhằm xóa bỏ triệt để chế độ tư hữu TBCN về TLSX chủ yếu</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>4. Điều kiện quy định sứ mệnh</h4>
+                            <div class="condition-cards">
+                                <div class="condition objective">
+                                    <h5>Điều kiện khách quan</h5>
+                                    <ul>
+                                        <li><strong>Địa vị kinh tế:</strong> Đại diện PTSX tiên tiến</li>
+                                        <li><strong>Đặc điểm:</strong> Tinh thần cách mạng, kỷ luật cao, bản chất quốc tế</li>
+                                    </ul>
+                                </div>
+                                <div class="condition subjective">
+                                    <h5>Điều kiện chủ quan</h5>
+                                    <ul>
+                                        <li>Phát triển về lượng và chất của GCCN</li>
+                                        <li><strong>Sự lãnh đạo của Đảng Cộng sản</strong> (nhân tố quan trọng nhất)</li>
+                                        <li>Xây dựng khối liên minh giai cấp</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Giai cấp công nhân hiện nay</h3>
+
+                        <div class="topic">
+                            <h4>Điểm tương đồng và khác biệt</h4>
+                            <div class="comparison">
+                                <div class="compare-row">
+                                    <h5>Tương đồng</h5>
+                                    <ul>
+                                        <li>Vẫn là LLSX hàng đầu</li>
+                                        <li>Vẫn bị bóc lột giá trị thặng dư</li>
+                                        <li>Xung đột lợi ích với giai cấp tư sản</li>
+                                    </ul>
+                                </div>
+                                <div class="compare-row">
+                                    <h5>Khác biệt</h5>
+                                    <ul>
+                                        <li><strong>Trí tuệ hóa:</strong> Công nhân tri thức tăng</li>
+                                        <li><strong>Tham gia sở hữu:</strong> Xu hướng trung lưu hóa</li>
+                                        <li>Ở nước XHCN đã trở thành giai cấp lãnh đạo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Thực hiện sứ mệnh trên thế giới hiện nay</h4>
+                            <div class="mission-list">
+                                <p>🏭 Giữ vai trò sản xuất vật chất chủ yếu</p>
+                                <p>🏛️ Lãnh đạo xây dựng CNXH (nước định hướng XHCN) hoặc đi đầu chống áp bức, bất công (nước TBCN)</p>
+                                <p>📢 Đi đầu trong đấu tranh ý thức hệ và xây dựng nền văn hóa tiến bộ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. Sứ mệnh lịch sử của GCCN Việt Nam</h3>
+
+                        <div class="topic">
+                            <h4>Đặc điểm</h4>
+                            <ul>
+                                <li>Ra đời từ quá trình "khai thác thuộc địa" của Pháp</li>
+                                <li>Phát triển trong nước nông nghiệp lạc hậu, trải qua chiến tranh kéo dài</li>
+                                <li><strong>Ưu thế chính trị:</strong> Sớm tiếp thu CN Mác-Lênin, vững vàng tư tưởng, đi đầu cách mạng</li>
+                                <li>Gắn bó lợi ích mật thiết với dân tộc, đặc biệt giai cấp nông dân</li>
+                            </ul>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Nội dung sứ mệnh hiện nay</h4>
+                            <div class="mission-cards">
+                                <div class="mission">
+                                    <h5>Về chính trị</h5>
+                                    <p>Là giai cấp lãnh đạo cách mạng, nguồn nhân lực chính tham gia phát triển kinh tế thị trường định hướng XHCN.</p>
+                                </div>
+                                <div class="mission">
+                                    <h5>Về lãnh đạo</h5>
+                                    <p>Giữ vững sự lãnh đạo của Đảng, ngăn chặn suy thoái "tự diễn biến", "tự chuyển hóa".</p>
+                                </div>
+                                <div class="mission">
+                                    <h5>Về văn hóa tư tưởng</h5>
+                                    <p>Xây dựng nền văn hóa tiên tiến, bảo vệ nền tảng tư tưởng Mác-Lênin và tư tưởng Hồ Chí Minh.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Phương hướng và giải pháp</h4>
+                            <div class="solutions">
+                                <div class="solution"><span class="num">1</span> Phát triển cả về số lượng và chất lượng</div>
+                                <div class="solution"><span class="num">2</span> Giải quyết việc làm, thực hiện tốt chính sách pháp luật</div>
+                                <div class="solution"><span class="num">3</span> Kiên định vai trò lãnh đạo, gắn với liên minh giai cấp</div>
+                                <div class="solution"><span class="num">4</span> Trí thức hóa công nhân</div>
+                            </div>
+                            <div class="note">
+                                <strong>Chính sách cần thực hiện:</strong> Luật Lao động, Luật Công đoàn, bảo hiểm xã hội...
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chapter 3 -->
+                <article id="chapter3" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 3</span>
+                        <h2>Chủ nghĩa Xã hội và Thời kỳ Quá độ lên CNXH</h2>
+                    </div>
+
+                    <!-- Slide Chương 3 -->
+                    <div class="slide-image">
+                        <img src="image/p13.png" alt="Chương 3 - CNXH và TKQĐ" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Chủ nghĩa xã hội</h3>
+
+                        <div class="topic">
+                            <h4>1. Khái niệm</h4>
+
+                            <!-- Slide Khái niệm CNXH -->
+                            <div class="slide-image">
+                                <img src="image/p14.png" alt="Khái niệm CNXH" loading="lazy">
+                            </div>
+
+                            <p>CNXH được tiếp cận trên <strong>4 phương diện</strong>:</p>
+                            <div class="four-aspects">
+                                <div class="aspect">
+                                    <span>✊</span>
+                                    <h6>Phong trào thực tiễn</h6>
+                                    <p>Đấu tranh của nhân dân lao động</p>
+                                </div>
+                                <div class="aspect">
+                                    <span>💡</span>
+                                    <h6>Trào lưu tư tưởng</h6>
+                                    <p>Lý luận giải phóng</p>
+                                </div>
+                                <div class="aspect">
+                                    <span>🔬</span>
+                                    <h6>Một khoa học</h6>
+                                    <p>CNXHKH</p>
+                                </div>
+                                <div class="aspect">
+                                    <span>🏛️</span>
+                                    <h6>Chế độ xã hội</h6>
+                                    <p>Giai đoạn đầu hình thái KT-XH CSCN</p>
+                                </div>
+                            </div>
+                            
+                            <div class="period-flow">
+                                <span>Thời kỳ quá độ lên CNXH</span>
+                                <span>→</span>
+                                <span class="highlight">Giai đoạn thấp (CNXH)</span>
+                                <span>→</span>
+                                <span>Giai đoạn cao (CNCS)</span>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Điều kiện ra đời</h4>
+                            <div class="condition-cards">
+                                <div class="condition">
+                                    <h5>Điều kiện kinh tế</h5>
+                                    <p>Sự phát triển đồ sộ của LLSX dưới thời CNTB dẫn đến mâu thuẫn với QHSX mang tính tư nhân TBCN.</p>
+                                </div>
+                                <div class="condition">
+                                    <h5>Điều kiện chính trị - xã hội</h5>
+                                    <p>Sự phân hóa giàu nghèo sâu sắc dẫn đến mâu thuẫn đối kháng giữa GCCN và GCTS.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Sáu đặc trưng cơ bản của CNXH</h4>
+                            <div class="characteristics">
+                                <div class="char"><span>1</span> Giải phóng giai cấp, dân tộc, xã hội, con người</div>
+                                <div class="char"><span>2</span> Do nhân dân lao động làm chủ</div>
+                                <div class="char"><span>3</span> Nền kinh tế phát triển cao dựa trên LLSX hiện đại</div>
+                                <div class="char"><span>4</span> Có nhà nước kiểu mới mang bản chất GCCN</div>
+                                <div class="char"><span>5</span> Nền văn hóa phát triển cao, kế thừa giá trị dân tộc</div>
+                                <div class="char"><span>6</span> Bảo đảm bình đẳng, đoàn kết dân tộc, hữu nghị quốc tế</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Thời kỳ quá độ lên CNXH</h3>
+
+                        <div class="topic">
+                            <h4>Tính tất yếu</h4>
+                            <div class="definition">
+                                <p>Là thời kỳ <strong>cải biến cách mạng</strong> từ xã hội cũ sang xã hội mới, đi kèm với nền <strong>chuyên chính cách mạng</strong> của giai cấp vô sản.</p>
+                            </div>
+                            
+                            <div class="two-forms">
+                                <div class="form">
+                                    <h5>Quá độ trực tiếp</h5>
+                                    <p>Từ CNTB</p>
+                                </div>
+                                <div class="form">
+                                    <h5>Quá độ gián tiếp</h5>
+                                    <p>Bỏ qua CNTB</p>
+                                </div>
+                            </div>
+                            
+                            <div class="note">
+                                <strong>Cần thời gian để:</strong> Chuyển đổi chế độ tư hữu sang công hữu, tổ chức lại LLSX, xây dựng quan hệ xã hội mới.
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Đặc điểm thời kỳ quá độ</h4>
+                            <p><strong>Tồn tại đan xen</strong> giữa yếu tố xã hội cũ và nhân tố mới:</p>
+                            <ul>
+                                <li><strong>Về kinh tế:</strong> Nhiều hình thức sở hữu và thành phần kinh tế</li>
+                                <li><strong>Về chính trị:</strong> Thiết lập chuyên chính vô sản</li>
+                                <li><strong>Về tư tưởng - văn hóa - xã hội:</strong> Nhiều yếu tố tư tưởng và giai tầng đan xen, vừa hợp tác vừa đấu tranh</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. Quá độ CNXH ở Việt Nam</h3>
+
+                        <div class="topic">
+                            <h4>Quá độ bỏ qua chế độ TBCN</h4>
+                            <div class="definition">
+                                <p><strong>Là con đường tất yếu khách quan</strong>, phù hợp khi Việt Nam xuất phát từ nước thuộc địa nửa phong kiến, bị tàn phá bởi chiến tranh.</p>
+                            </div>
+                            <div class="note">
+                                <strong>Giải thích "bỏ qua":</strong> Bỏ qua vị trí thống trị của QHSX và kiến trúc thượng tầng TBCN, nhưng tiếp thu các thành tựu nhân loại dưới thời CNTB.
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>8 Đặc trưng CNXH Việt Nam</h4>
+                            <div class="vn-features">
+                                <span>Dân giàu, nước mạnh, dân chủ, công bằng, văn minh</span>
+                                <span>Do nhân dân làm chủ</span>
+                                <span>Nền kinh tế phát triển cao</span>
+                                <span>Nền văn hóa tiên tiến, đậm đà bản sắc</span>
+                                <span>Con người có cuộc sống ấm no, tự do, hạnh phúc</span>
+                                <span>Các dân tộc bình đẳng, đoàn kết</span>
+                                <span>Nhà nước pháp quyền XHCN do Đảng lãnh đạo</span>
+                                <span>Hữu nghị và hợp tác quốc tế</span>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>8 Phương hướng xây dựng (Cương lĩnh 2011)</h4>
+                            <div class="directions">
+                                <span>🏭 Đẩy mạnh CNH-HĐH</span>
+                                <span>📈 Phát triển kinh tế thị trường định hướng XHCN</span>
+                                <span>🎭 Xây dựng văn hóa, con người</span>
+                                <span>🛡️ Bảo đảm quốc phòng an ninh</span>
+                                <span>🌐 Đối ngoại độc lập, tự chủ</span>
+                                <span>✊ Xây dựng dân chủ XHCN</span>
+                                <span>⚖️ Xây dựng Nhà nước pháp quyền XHCN</span>
+                                <span>🏢 Xây dựng Đảng trong sạch, vững mạnh</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chapter 4 -->
+                <article id="chapter4" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 4</span>
+                        <h2>Dân chủ XHCN và Nhà nước XHCN</h2>
+                    </div>
+
+                    <!-- Slide Chương 4 -->
+                    <div class="slide-image">
+                        <img src="image/p15.png" alt="Chương 4 - Dân chủ XHCN" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Dân chủ và dân chủ XHCN</h3>
+
+                        <div class="topic">
+                            <h4>1. Quan niệm về dân chủ</h4>
+                            <div class="definition">
+                                <p><strong>Nghĩa gốc:</strong> Quyền lực của nhân dân (Demos Kratos)</p>
+                            </div>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Theo CN Mác-Lênin</h5>
+                                    <p>Dân chủ là <strong>hình thức tổ chức nhà nước</strong> của giai cấp thống trị, là "sự thống trị của đa số".</p>
+                                </div>
+                                <div class="col">
+                                    <h5>Theo Hồ Chí Minh</h5>
+                                    <p>Dân chủ trước hết là <strong>giá trị nhân loại</strong> (dân là chủ, dân làm chủ), đồng thời là một <strong>thể chế chính trị</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Sự ra đời và phát triển của dân chủ</h4>
+                            <div class="evolution-stages">
+                                <span>Cộng sản nguyên thủy</span>
+                                <span>→</span>
+                                <span>Dân chủ chủ nô</span>
+                                <span>→</span>
+                                <span>Phong kiến</span>
+                                <span>→</span>
+                                <span>Dân chủ tư sản</span>
+                                <span>→</span>
+                                <span class="highlight">Dân chủ vô sản</span>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Dân chủ XHCN</h4>
+                            <div class="highlight-box">
+                                <h5>Quá trình ra đời</h5>
+                                <p>Hình thành từ sau <strong>Cách mạng Tháng Mười Nga (1917)</strong>, phát triển từ thấp đến cao, kế thừa có chọn lọc các nền dân chủ trước đó.</p>
+                            </div>
+                            <div class="essence-grid">
+                                <div>
+                                    <h5>Về chính trị</h5>
+                                    <p>Mang bản chất GCCN, do Đảng Cộng sản lãnh đạo (nhất nguyên).</p>
+                                </div>
+                                <div>
+                                    <h5>Về kinh tế</h5>
+                                    <p>Dựa trên sở hữu xã hội về TLSX chủ yếu.</p>
+                                </div>
+                                <div>
+                                    <h5>Về tư tưởng</h5>
+                                    <p>CN Mác-Lênin là hệ tư tưởng chủ đạo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Nhà nước XHCN</h3>
+
+                        <div class="topic">
+                            <h4>1. Sự ra đời và Bản chất</h4>
+                            <div class="definition">
+                                <p><strong>Sự ra đời:</strong> Là kết quả của cuộc cách mạng vô sản dưới sự lãnh đạo của Đảng Cộng sản.</p>
+                            </div>
+                            <ul>
+                                <li>Kiểu nhà nước <strong>mới</strong>, mang bản chất GCCN</li>
+                                <li>Nhân dân là <strong>chủ thể quyền lực</strong></li>
+                                <li>"Nhà nước <strong>của dân</strong>, <strong>do dân</strong>, <strong>vì dân</strong>"</li>
+                            </ul>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Chức năng của Nhà nước XHCN</h4>
+                            <div class="functions">
+                                <span>Đối nội/Đối ngoại</span>
+                                <span>Chức năng giai cấp</span>
+                                <span>Chức năng xã hội</span>
+                                <span>Kinh tế, chính trị, văn hóa</span>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Mối quan hệ Dân chủ XHCN và Nhà nước XHCN</h4>
+                            <div class="relationship">
+                                <div class="rel-box">
+                                    <h5>Dân chủ XHCN</h5>
+                                    <p>Cơ sở, nền tảng</p>
+                                </div>
+                                <span>⟷</span>
+                                <div class="rel-box">
+                                    <h5>Nhà nước XHCN</h5>
+                                    <p>Công cụ quan trọng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. Dân chủ XHCN và Nhà nước Pháp quyền XHCN ở Việt Nam</h3>
+
+                        <div class="topic">
+                            <h4>1. Dân chủ XHCN ở Việt Nam</h4>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <span class="time">1945</span>
+                                    <p>Dân chủ nhân dân</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="time">1976</span>
+                                    <p>Làm chủ tập thể</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="time">Nay</span>
+                                    <p>Không ngừng hoàn thiện</p>
+                                </div>
+                            </div>
+                            <p>Dân chủ vừa là <strong>mục tiêu</strong>, <strong>bản chất</strong>, vừa là <strong>động lực</strong> phát triển.</p>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Nhà nước Pháp quyền XHCN ở Việt Nam</h4>
+                            <div class="definition">
+                                <p>Là nhà nước <strong>thượng tôn pháp luật</strong>, hướng tới <strong>phúc lợi, tự do, bình đẳng</strong>, có sự phân công, phối hợp và kiểm soát quyền lực rõ ràng.</p>
+                            </div>
+                            <div class="slogan">
+                                <strong>"Dân biết, dân bàn, dân làm, dân kiểm tra"</strong>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Phòng, chống tham nhũng (PCTN)</h4>
+                            <div class="ac-grid">
+                                <div>
+                                    <h5>Khái niệm</h5>
+                                    <p>Tham nhũng là hành vi <strong>lợi dụng chức vụ, quyền hạn vì vụ lợi</strong>.</p>
+                                </div>
+                                <div>
+                                    <h5>Nguyên nhân</h5>
+                                    <p>Thể chế chưa hoàn thiện, tác động kinh tế thị trường, quản lý yếu kém.</p>
+                                </div>
+                                <div>
+                                    <h5>Tác hại</h5>
+                                    <p>Về chính trị, kinh tế, khoảng cách giàu nghèo.</p>
+                                </div>
+                                <div>
+                                    <h5>Trách nhiệm</h5>
+                                    <p>Chấp hành pháp luật, tố cáo, giám sát.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chapter 5 -->
+                <article id="chapter5" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 5</span>
+                        <h2>Cơ cấu Xã hội - Giai cấp và Liên minh Giai cấp, Tầng lớp</h2>
+                    </div>
+
+                    <!-- Slide Chương 5 -->
+                    <div class="slide-image">
+                        <img src="image/p16.png" alt="Chương 5 - Cơ cấu XH-GC" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Cơ cấu xã hội - giai cấp</h3>
+
+                        <div class="topic">
+                            <h4>1. Khái niệm</h4>
+                            <div class="definition">
+                                <p><strong>Cơ cấu xã hội</strong> là những cộng đồng người và các mối quan hệ giữa họ (dân cư, nghề nghiệp, giai cấp, dân tộc, tôn giáo).</p>
+                            </div>
+                            <div class="highlight-box">
+                                <p><strong>Cơ cấu xã hội - giai cấp (CCXH-GC)</strong> là hệ thống các giai tầng tồn tại khách quan, liên kết qua quan hệ sở hữu TLSX, tổ chức quản lý, và địa vị chính trị - xã hội.</p>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Vị trí của CCXH-GC</h4>
+                            <div class="highlight-box">
+                                <p>CCXH-GC có <strong>vị trí quan trọng hàng đầu</strong>, chi phối các cơ cấu xã hội khác vì liên quan trực tiếp đến:</p>
+                                <ul>
+                                    <li><strong>Quyền lực chính trị</strong></li>
+                                    <li><strong>Sở hữu TLSX</strong></li>
+                                    <li><strong>Phân phối thu nhập</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Quy luật biến đổi CCXH-GC</h4>
+                            <ul>
+                                <li>Biến đổi gắn liền với <strong>cơ cấu kinh tế</strong> (PTSX, cơ cấu ngành nghề)</li>
+                                <li>Quá trình diễn ra <strong>phức tạp, đa dạng</strong></li>
+                                <li>Làm xuất hiện các <strong>tầng lớp mới</strong></li>
+                                <li>Biến đổi trong mối quan hệ <strong>vừa đấu tranh vừa liên minh</strong></li>
+                                <li>Từng bước <strong>xóa bỏ bất bình đẳng</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Liên minh giai cấp, tầng lớp</h3>
+
+                        <div class="topic">
+                            <h4>1. Khái niệm</h4>
+                            <div class="definition">
+                                <p>Là sự <strong>liên kết, hợp tác, hỗ trợ</strong> nhau nhằm thực hiện nhu cầu và lợi ích, tạo động lực xây dựng CNXH.</p>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Vai trò của liên minh giai cấp</h4>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Về chính trị</h5>
+                                    <ul>
+                                        <li>Tạo nền tảng xã hội vững chắc</li>
+                                        <li>Tập hợp lực lượng tiến hành cách mạng</li>
+                                        <li>Dưới sự lãnh đạo của Đảng</li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>Về kinh tế</h5>
+                                    <ul>
+                                        <li>Thỏa mãn nhu cầu, lợi ích kinh tế chung</li>
+                                        <li>Xây dựng cơ sở vật chất cho CNXH</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="highlight-box">
+                                <p><strong>Liên minh (công - nông - trí thức)</strong> là điều kiện quyết định thắng lợi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. CCXH-GC và Liên minh giai tầng ở Việt Nam</h3>
+
+                        <div class="topic">
+                            <h4>1. Cơ cấu xã hội - giai cấp ở Việt Nam</h4>
+                            <div class="classes-grid">
+                                <div><h5>Giai cấp công nhân</h5><p>Lãnh đạo, nòng cốt</p></div>
+                                <div><h5>Giai cấp nông dân</h5><p>Vị trí chiến lược trong CNH, HĐH nông nghiệp</p></div>
+                                <div><h5>Đội ngũ trí thức</h5><p>Lao động sáng tạo đặc biệt</p></div>
+                                <div><h5>Đội ngũ doanh nhân</h5><p>Vai trò kinh tế quan trọng</p></div>
+                                <div><h5>Phụ nữ và Thanh niên</h5><p>Lực lượng xã hội rộng lớn</p></div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Nội dung liên minh ở Việt Nam</h4>
+                            <div class="alliance-content">
+                                <div>
+                                    <h5>Kinh tế</h5>
+                                    <ul>
+                                        <li>Thỏa mãn lợi ích</li>
+                                        <li>Xây dựng cơ sở vật chất</li>
+                                        <li>Chuyển giao khoa học công nghệ</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Chính trị</h5>
+                                    <ul>
+                                        <li>Bảo vệ chế độ, giữ vững định hướng XHCN</li>
+                                        <li>Dưới sự lãnh đạo của Đảng</li>
+                                        <li>Hoàn thiện dân chủ</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Văn hóa - xã hội</h5>
+                                    <ul>
+                                        <li>Gắn tăng trưởng kinh tế với phát triển văn hóa</li>
+                                        <li>Khắc phục khoảng cách giàu nghèo</li>
+                                        <li>Chăm lo an sinh xã hội</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Phương hướng xây dựng</h4>
+                            <div class="solutions">
+                                <div class="solution"><span class="num">1</span> Đẩy mạnh CNH-HĐH gắn với kinh tế tri thức</div>
+                                <div class="solution"><span class="num">2</span> Xây dựng hệ thống chính sách xã hội tổng thể</div>
+                                <div class="solution"><span class="num">3</span> Tạo đồng thuận đoàn kết</div>
+                                <div class="solution"><span class="num">4</span> Hoàn thiện thể chế kinh tế thị trường định hướng XHCN</div>
+                                <div class="solution"><span class="num">5</span> Đổi mới hoạt động của Đảng, Nhà nước và MTTQ Việt Nam</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chapter 6 -->
+                <article id="chapter6" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 6</span>
+                        <h2>Vấn đề Dân tộc và Tôn giáo trong Thời kỳ Quá độ</h2>
+                    </div>
+
+                    <!-- Slide Chương 6 -->
+                    <div class="slide-image">
+                        <img src="image/p17.png" alt="Chương 6 - Dân tộc, Tôn giáo" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Dân tộc</h3>
+
+                        <div class="topic">
+                            <h4>1. Khái niệm</h4>
+                            <div class="definition">
+                                <p><strong>Quá trình phát triển:</strong> Thị tộc → Bộ lạc → Bộ tộc → Dân tộc</p>
+                            </div>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Quốc gia dân tộc</h5>
+                                    <p>Chung <strong>lãnh thổ</strong>, <strong>kinh tế</strong>, <strong>nhà nước</strong>, <strong>ngôn ngữ</strong>, <strong>văn hóa</strong></p>
+                                </div>
+                                <div class="col">
+                                    <h5>Tộc người</h5>
+                                    <p>Chung <strong>ngôn ngữ</strong>, <strong>văn hóa</strong>, <strong>ý thức tự giác</strong> tộc người</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Quan điểm Mác-Lênin về dân tộc</h4>
+                            <div class="highlight-box">
+                                <h5>Hai xu hướng phát triển</h5>
+                                <div class="trends">
+                                    <span>Tách ra thành quốc gia độc lập</span>
+                                    <span>Liên hiệp lại với nhau</span>
+                                </div>
+                            </div>
+                            <div class="principles">
+                                <h5>Cương lĩnh dân tộc</h5>
+                                <div class="principle"><span class="num">1</span> Các dân tộc <strong>hoàn toàn bình đẳng</strong></div>
+                                <div class="principle"><span class="num">2</span> Các dân tộc được quyền <strong>tự quyết</strong></div>
+                                <div class="principle"><span class="num">3</span> <strong>Liên hiệp công nhân</strong> tất cả các dân tộc</div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Dân tộc ở Việt Nam</h4>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Đặc điểm</h5>
+                                    <ul>
+                                        <li>Chênh lệch số dân giữa các dân tộc</li>
+                                        <li>Cư trú <strong>xen kẽ</strong></li>
+                                        <li>Trình độ phát triển <strong>không đồng đều</strong></li>
+                                        <li>Có <strong>truyền thống đoàn kết</strong></li>
+                                        <li>Có <strong>bản sắc văn hóa</strong> riêng</li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>Quan điểm, chính sách</h5>
+                                    <p><strong>Bình đẳng, đoàn kết, tương trợ</strong>, ưu tiên phát triển KT-XH vùng miền núi.</p>
+                                    <div class="policy-areas">
+                                        <span>Chính trị</span>
+                                        <span>Kinh tế</span>
+                                        <span>Xã hội</span>
+                                        <span>An ninh</span>
+                                        <span>Văn hóa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Tôn giáo</h3>
+
+                        <div class="topic">
+                            <h4>1. Quan điểm Mác-Lênin về tôn giáo</h4>
+                            <div class="definition">
+                                <p>Tôn giáo là <strong>hình thái ý thức xã hội</strong> phản ánh hư ảo hiện thực khách quan, do con người sáng tạo ra.</p>
+                            </div>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Nguồn gốc</h5>
+                                    <div class="origins">
+                                        <span>Tự nhiên</span>
+                                        <span>KT-XH</span>
+                                        <span>Nhận thức</span>
+                                        <span>Tâm lý</span>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h5>Tính chất</h5>
+                                    <ul>
+                                        <li><strong>Tính lịch sử:</strong> Xuất hiện theo lịch sử</li>
+                                        <li><strong>Tính quần chúng:</strong> Có đông đảo tín đồ</li>
+                                        <li><strong>Tính chính trị:</strong> Ảnh hưởng đến đời sống chính trị</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Tôn giáo ở Việt Nam</h4>
+                            <div class="two-columns">
+                                <div class="col">
+                                    <h5>Đặc điểm</h5>
+                                    <ul>
+                                        <li>Quốc gia <strong>đa tôn giáo</strong> (13 tôn giáo)</li>
+                                        <li>Sống <strong>hòa bình đan xen</strong></li>
+                                        <li>Tín đồ chủ yếu là nhân dân lao động</li>
+                                        <li>Chức sắc có vai trò quan trọng</li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h5>Chính sách</h5>
+                                    <p>Tín ngưỡng, tôn giáo là <strong>nhu cầu tinh thần</strong>, công tác tôn giáo là <strong>công tác vận động quần chúng</strong>.</p>
+                                    <p>Mọi hoạt động phải <strong>tuân thủ pháp luật</strong>, nghiêm cấm lợi dụng tôn giáo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. Quan hệ Dân tộc và Tôn giáo ở Việt Nam</h3>
+
+                        <div class="topic">
+                            <h4>1. Đặc điểm</h4>
+                            <p>Chịu sự chi phối bởi <strong>tín ngưỡng truyền thống</strong>: thờ cúng Hùng Vương, tổ tiên, Thành hoàng làng - cơ sở hội tụ đoàn kết cộng đồng.</p>
+                            <div class="warning-box">
+                                <strong>Cảnh báo:</strong> Xuất hiện các <strong>hiện tượng tôn giáo mới</strong> lợi dụng mê tín, xuyên tạc chính sách gây ảnh hưởng tiêu cực đến đoàn kết.
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Định hướng giải quyết</h4>
+                            <p><strong>Đây là vấn đề chiến lược cơ bản, lâu dài.</strong></p>
+                            <div class="solutions">
+                                <div class="solution">🏛️ Đặt trong mối quan hệ quốc gia - dân tộc</div>
+                                <div class="solution">⚖️ Giải quyết vấn đề tôn giáo trên cơ sở vấn đề dân tộc</div>
+                                <div class="solution">🛡️ Giữ vững độc lập chủ quyền, không lợi dụng để ly khai</div>
+                                <div class="solution">🤝 Bảo đảm quyền tự do tín ngưỡng, quyền con người theo pháp luật</div>
+                                <div class="solution">⚔️ Kiên quyết đấu tranh chống các thế lực thù địch</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chapter 7 -->
+                <article id="chapter7" class="chapter-section">
+                    <div class="chapter-header">
+                        <span class="chapter-badge">Chương 7</span>
+                        <h2>Vấn đề Gia đình trong Thời kỳ Quá độ lên CNXH</h2>
+                    </div>
+
+                    <!-- Slide Chương 7 -->
+                    <div class="slide-image">
+                        <img src="image/p18.png" alt="Chương 7 - Gia đình" loading="lazy">
+                    </div>
+
+                    <div class="part">
+                        <h3>I. Khái niệm, vị trí và chức năng của gia đình</h3>
+
+                        <div class="topic">
+                            <h4>1. Khái niệm</h4>
+                            <div class="definition">
+                                <p>Gia đình là <strong>hình thức cộng đồng xã hội đặc biệt</strong>, hình thành trên cơ sở <strong>hôn nhân</strong>, <strong>quan hệ huyết thống</strong> và <strong>nuôi dưỡng</strong>.</p>
+                            </div>
+                            <div class="relationships">
+                                <div><h5>Chiều ngang</h5><p>Vợ - Chồng</p></div>
+                                <div><h5>Chiều dọc</h5><p>Cha mẹ - Con cái</p></div>
+                                <div><h5>Nuôi dưỡng</h5><p>Cha mẹ nuôi - Con nuôi</p></div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Vị trí của gia đình</h4>
+                            <div class="position-cards">
+                                <div>
+                                    <span>🔬</span>
+                                    <h5>Tế bào xã hội</h5>
+                                    <p>Đơn vị cơ sở tái sản xuất con người</p>
+                                </div>
+                                <div>
+                                    <span>🏠</span>
+                                    <h5>Tổ ấm</h5>
+                                    <p>Hạnh phúc, nuôi dưỡng, phát triển cá nhân</p>
+                                </div>
+                                <div>
+                                    <span>🌉</span>
+                                    <h5>Cầu nối</h5>
+                                    <p>Giữa cá nhân với xã hội</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Chức năng của gia đình</h4>
+                            <div class="functions-grid">
+                                <div class="func highlight">
+                                    <h5>Tái sản xuất con người</h5>
+                                    <p><strong>Đặc thù nhất</strong></p>
+                                </div>
+                                <div class="func">
+                                    <h5>Nuôi dưỡng, giáo dục</h5>
+                                    <p>Hình thành nhân cách</p>
+                                </div>
+                                <div class="func">
+                                    <h5>Kinh tế và tiêu dùng</h5>
+                                    <p>Tham gia sản xuất, tiêu dùng</p>
+                                </div>
+                                <div class="func">
+                                    <h5>Tâm sinh lý</h5>
+                                    <p>Thỏa mãn nhu cầu, duy trì tình cảm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>II. Cơ sở xây dựng gia đình trong TKQĐ lên CNXH</h3>
+
+                        <div class="topic">
+                            <h4>Cơ sở xây dựng</h4>
+                            <div class="bases-grid">
+                                <div>
+                                    <h5>Cơ sở kinh tế - xã hội</h5>
+                                    <ul>
+                                        <li>LLSX phát triển, thiết lập QHSX XHCN</li>
+                                        <li>Xóa bỏ chế độ sở hữu tư nhân, áp bức, bóc lột</li>
+                                        <li>Đảm bảo hôn nhân dựa trên <strong>tình yêu</strong></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Cơ sở chính trị - xã hội</h5>
+                                    <ul>
+                                        <li>Thiết lập nhà nước XHCN</li>
+                                        <li>Pháp luật bảo vệ hạnh phúc gia đình</li>
+                                        <li>Đảm bảo <strong>bình đẳng nam nữ</strong></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Cơ sở văn hóa</h5>
+                                    <ul>
+                                        <li>Nền tảng tư tưởng GCCN chi phối</li>
+                                        <li>Loại bỏ tập quán lạc hậu</li>
+                                        <li>Giáo dục, KHCN nâng cao nhận thức</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>Chế độ hôn nhân tiến bộ</h4>
+                            <div class="marriage-principles">
+                                <span>💕 Tự nguyện</span>
+                                <span>👫 Một vợ một chồng</span>
+                                <span>⚖️ Bình đẳng</span>
+                                <span>📜 Được pháp luật bảo vệ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part">
+                        <h3>III. Xây dựng gia đình Việt Nam hiện nay</h3>
+
+                        <div class="topic">
+                            <h4>1. Sự biến đổi</h4>
+                            <div class="definition">
+                                <p>Gia đình Việt Nam đang là <strong>"gia đình quá độ"</strong> chuyển từ nông nghiệp cổ truyền sang công nghiệp hiện đại.</p>
+                            </div>
+                            <div class="two-columns">
+                                <div class="col positive">
+                                    <h5>Tích cực</h5>
+                                    <ul>
+                                        <li>Gia đình đơn (hai thế hệ) phổ biến</li>
+                                        <li>Bình đẳng nam nữ được đề cao</li>
+                                    </ul>
+                                </div>
+                                <div class="col negative">
+                                    <h5>Thách thức</h5>
+                                    <ul>
+                                        <li>Khoảng cách thế hệ</li>
+                                        <li>Tỷ lệ ly hôn tăng</li>
+                                        <li>Văn hóa truyền thống bị ảnh hưởng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topic">
+                            <h4>2. Biến đổi các chức năng</h4>
+                            <ul>
+                                <li><strong>Tái SX con người:</strong> Sinh đẻ chủ động, giảm mức sinh, giảm tâm lý trọng nam khinh nữ</li>
+                                <li><strong>Kinh tế:</strong> Chuyển sang kinh tế hàng hóa, trở thành bộ phận kinh tế quốc dân</li>
+                                <li><strong>Giáo dục:</strong> Xã hội hóa giáo dục lấn át, vai trò gia đình có xu hướng suy giảm</li>
+                                <li><strong>Tâm sinh lý:</strong> Chuyển từ đơn vị kinh tế sang đơn vị tình cảm</li>
+                            </ul>
+                        </div>
+
+                        <div class="topic">
+                            <h4>3. Phương hướng cơ bản</h4>
+                            <div class="guidelines">
+                                <div class="guideline"><span class="num">1</span> Tăng cường sự lãnh đạo của Đảng</div>
+                                <div class="guideline"><span class="num">2</span> Đẩy mạnh phát triển KT-XH nâng cao đời sống</div>
+                                <div class="guideline"><span class="num">3</span> Kế thừa giá trị truyền thống kết hợp với tiến bộ nhân loại</div>
+                                <div class="guideline"><span class="num">4</span> Phát triển phong trào xây dựng gia đình văn hóa</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="brand-icon">★</span>
+                        <span>CNXHKH</span>
+                    </div>
+                    <p>Tài liệu học tập dành cho sinh viên FPT University</p>
+                    <p class="copyright">© 2026 Ôn Tập CNXHKH - FPT University</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

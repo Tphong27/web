@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân hàng câu hỏi - CNXHKH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <span class="brand-icon">★</span>
+                <span class="brand-text">CNXHKH</span>
+            </div>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Trang chủ</span>
+            </a>
+            <div class="nav-group">
+                <a href="content.html" class="nav-item has-submenu" onclick="toggleChapterMenu(event)">
+                    <span class="nav-icon">📖</span>
+                    <span class="nav-text">Nội dung ôn tập</span>
+                    <span class="nav-arrow" id="chapterArrow">▼</span>
+                </a>
+                <div class="submenu" id="chapterSubmenu">
+                    <a href="content.html#chapter1" class="submenu-item">Chương 1: Nhập môn</a>
+                    <a href="content.html#chapter2" class="submenu-item">Chương 2: Sứ mệnh GCCN</a>
+                    <a href="content.html#chapter3" class="submenu-item">Chương 3: CNXH và TKQĐ</a>
+                    <a href="content.html#chapter4" class="submenu-item">Chương 4: Dân chủ XHCN</a>
+                    <a href="content.html#chapter5" class="submenu-item">Chương 5: Cơ cấu XH-GC</a>
+                    <a href="content.html#chapter6" class="submenu-item">Chương 6: Dân tộc, Tôn giáo</a>
+                    <a href="content.html#chapter7" class="submenu-item">Chương 7: Gia đình</a>
+                </div>
+            </div>
+            <a href="questions.html" class="nav-item active">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Ngân hàng câu hỏi</span>
+            </a>
+            <a href="quiz.html" class="nav-item">
+                <span class="nav-icon">✍️</span>
+                <span class="nav-text">Quiz</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>FPT University</p>
+            <p>MLN131</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="mobile-title">CNXHKH</span>
+        </header>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1>Ngân hàng câu hỏi</h1>
+                <p>Toàn bộ câu hỏi trắc nghiệm có đáp án — đọc, tra cứu và tìm kiếm</p>
+            </div>
+        </header>
+
+        <!-- Bank Container -->
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm trong câu hỏi, đáp án và đáp án đúng..." autocomplete="off" />
+                    <button class="search-clear" id="searchClear" title="Xóa">✕</button>
+                </div>
+                <div class="search-meta" id="searchMeta"></div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Tổng cộng <span class="count" id="count-all">75</span> câu hỏi</button>
+                </div>
+
+                <!-- Loading State -->
+                <div class="bank-loading" id="bankLoading">
+                    <div class="spinner"></div>
+                    <p>Đang tải ngân hàng câu hỏi...</p>
+                </div>
+
+                <!-- Error State -->
+                <div class="bank-error" id="bankError" hidden>
+                    <div class="bank-error-icon">⚠️</div>
+                    <h3>Không tải được file câu hỏi</h3>
+                    <p id="bankErrorMsg">Vui lòng chạy web qua local server (vd: <code>python -m http.server</code>) hoặc kiểm tra đường dẫn <code>docs/quiz_75cau_dapan.txt</code>.</p>
+                </div>
+
+                <!-- Questions Bank -->
+                <div class="questions-bank" id="questionsBank" hidden></div>
+
+                <!-- Empty State -->
+                <div class="bank-empty" id="bankEmpty" hidden>
+                    <div class="bank-empty-icon">🔎</div>
+                    <h3>Không tìm thấy câu hỏi nào</h3>
+                    <p>Thử thay đổi từ khóa hoặc bỏ chọn bộ lọc chương.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="brand-icon">★</span>
+                        <span>CNXHKH</span>
+                    </div>
+                    <p>Tài liệu học tập dành cho sinh viên FPT University</p>
+                    <p class="copyright">© 2026 Ôn Tập CNXHKH - FPT University</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

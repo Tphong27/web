@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - CNXHKH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <span class="brand-icon">★</span>
+                <span class="brand-text">CNXHKH</span>
+            </div>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Trang chủ</span>
+            </a>
+            <div class="nav-group">
+                <a href="content.html" class="nav-item has-submenu" onclick="toggleChapterMenu(event)">
+                    <span class="nav-icon">📖</span>
+                    <span class="nav-text">Nội dung ôn tập</span>
+                    <span class="nav-arrow" id="chapterArrow">▼</span>
+                </a>
+                <div class="submenu" id="chapterSubmenu">
+                    <a href="content.html#chapter1" class="submenu-item">Chương 1: Nhập môn</a>
+                    <a href="content.html#chapter2" class="submenu-item">Chương 2: Sứ mệnh GCCN</a>
+                    <a href="content.html#chapter3" class="submenu-item">Chương 3: CNXH và TKQĐ</a>
+                    <a href="content.html#chapter4" class="submenu-item">Chương 4: Dân chủ XHCN</a>
+                    <a href="content.html#chapter5" class="submenu-item">Chương 5: Cơ cấu XH-GC</a>
+                    <a href="content.html#chapter6" class="submenu-item">Chương 6: Dân tộc, Tôn giáo</a>
+                    <a href="content.html#chapter7" class="submenu-item">Chương 7: Gia đình</a>
+                </div>
+            </div>
+            <a href="questions.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Ngân hàng câu hỏi</span>
+            </a>
+            <a href="quiz.html" class="nav-item active">
+                <span class="nav-icon">✍️</span>
+                <span class="nav-text">Quiz</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <p>FPT University</p>
+            <p>MLN131</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="mobile-title">CNXHKH</span>
+        </header>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1>Quiz trắc nghiệm</h1>
+                <p>Kiểm tra kiến thức với các câu hỏi trắc nghiệm</p>
+            </div>
+        </header>
+
+        <!-- Quiz Container -->
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- Mode selector -->
+                <div id="quizModeSelect" class="quiz-mode-select">
+                    <h2>Chọn chế độ làm bài</h2>
+                    <p class="quiz-mode-subtitle">Nguồn câu hỏi lấy từ ngân hàng 75 câu trắc nghiệm CNXHKH</p>
+                    <div class="quiz-mode-grid">
+                        <button class="quiz-mode-card" data-mode="random30">
+                            <div class="mode-icon">🎲</div>
+                            <h3>Ngẫu nhiên 30 câu</h3>
+                            <p>Hệ thống chọn ngẫu nhiên 30 câu từ ngân hàng</p>
+                        </button>
+                        <button class="quiz-mode-card" data-mode="all75">
+                            <div class="mode-icon">📚</div>
+                            <h3>Tổng 75 câu</h3>
+                            <p>Làm toàn bộ 75 câu theo thứ tự từ 1 đến 75</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz runner (ẩn ban đầu) -->
+                <div id="quizRunner" class="quiz-runner" hidden>
+                    <div class="quiz-header">
+                        <button id="quizExit" class="quiz-btn ghost">← Thoát</button>
+                        <div class="quiz-header-info">
+                            <span id="quizModeTitle" class="quiz-mode-title"></span>
+                            <span id="quizProgress" class="quiz-progress"></span>
+                        </div>
+                        <span id="quizScore" class="quiz-score">Điểm: 0</span>
+                    </div>
+                    <div id="quizCard" class="quiz-card"></div>
+                    <div class="quiz-nav">
+                        <button id="quizPrev" class="quiz-btn">← Câu trước</button>
+                        <button id="quizNext" class="quiz-btn primary">Câu sau →</button>
+                    </div>
+                </div>
+
+                <!-- Result modal -->
+                <div id="quizResultModal" class="quiz-modal" hidden>
+                    <div class="quiz-modal-content">
+                        <div class="quiz-modal-icon">🏆</div>
+                        <h2>Hoàn thành!</h2>
+                        <div id="quizResultScore" class="quiz-result-score"></div>
+                        <p id="quizResultPercent" class="quiz-result-percent"></p>
+                        <div class="quiz-modal-actions">
+                            <button id="quizRetry" class="quiz-btn primary">Làm lại</button>
+                            <button id="quizBackModes" class="quiz-btn">Chọn chế độ khác</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="brand-icon">★</span>
+                        <span>CNXHKH</span>
+                    </div>
+                    <p>Tài liệu học tập dành cho sinh viên FPT University</p>
+                    <p class="copyright">© 2026 Ôn Tập CNXHKH - FPT University</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

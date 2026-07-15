@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập CNXHKH - FPT University</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <span class="brand-icon">★</span>
+                <span class="brand-text">CNXHKH</span>
+            </div>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Trang chủ</span>
+            </a>
+            <div class="nav-group">
+                <a href="content.html" class="nav-item has-submenu" onclick="toggleChapterMenu(event)">
+                    <span class="nav-icon">📖</span>
+                    <span class="nav-text">Nội dung ôn tập</span>
+                    <span class="nav-arrow" id="chapterArrow">▼</span>
+                </a>
+                <div class="submenu" id="chapterSubmenu">
+                    <a href="content.html#chapter1" class="submenu-item">Chương 1: Nhập môn</a>
+                    <a href="content.html#chapter2" class="submenu-item">Chương 2: Sứ mệnh GCCN</a>
+                    <a href="content.html#chapter3" class="submenu-item">Chương 3: CNXH và TKQĐ</a>
+                    <a href="content.html#chapter4" class="submenu-item">Chương 4: Dân chủ XHCN</a>
+                    <a href="content.html#chapter5" class="submenu-item">Chương 5: Cơ cấu XH-GC</a>
+                    <a href="content.html#chapter6" class="submenu-item">Chương 6: Dân tộc, Tôn giáo</a>
+                    <a href="content.html#chapter7" class="submenu-item">Chương 7: Gia đình</a>
+                </div>
+            </div>
+            <a href="questions.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">Ngân hàng câu hỏi</span>
+            </a>
+            <a href="quiz.html" class="nav-item">
+                <span class="nav-icon">✍️</span>
+                <span class="nav-text">Quiz</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <p>FPT University</p>
+            <p>MLN131</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="mobile-title">CNXHKH</span>
+        </header>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Ôn Tập Chủ nghĩa Xã hội Khoa học</h1>
+                <p class="hero-subtitle">Tài liệu học tập dành cho sinh viên FPT University</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-icon">📚</span>
+                        <span class="stat-num">7</span>
+                        <span class="stat-label">Chương</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">📝</span>
+                        <span class="stat-num">50+</span>
+                        <span class="stat-label">Câu hỏi</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🎯</span>
+                        <span class="stat-num">10</span>
+                        <span class="stat-label">Quiz</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Khám phá nội dung học tập</h2>
+                <div class="features-grid">
+                    <a href="content.html" class="feature-card">
+                        <div class="feature-icon">📖</div>
+                        <h3>Nội dung ôn tập</h3>
+                        <p>Tổng hợp kiến thức từ 7 chương, trình bày dễ hiểu theo cấu trúc slide</p>
+                        <span class="feature-link">Xem nội dung →</span>
+                    </a>
+                    <a href="questions.html" class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Ngân hàng câu hỏi</h3>
+                        <p>Câu hỏi lý thuyết có đáp án chi tiết theo từng chương</p>
+                        <span class="feature-link">Xem câu hỏi →</span>
+                    </a>
+                    <a href="quiz.html" class="feature-card">
+                        <div class="feature-icon">✍️</div>
+                        <h3>Quiz trắc nghiệm</h3>
+                        <p>Kiểm tra kiến thức với các câu hỏi trắc nghiệm đa dạng</p>
+                        <span class="feature-link">Làm quiz →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapters Overview -->
+        <section class="chapters-section">
+            <div class="container">
+                <h2 class="section-title">Mục lục các chương</h2>
+                <div class="chapters-list">
+                    <a href="content.html#chapter1" class="chapter-row">
+                        <span class="chapter-num">01</span>
+                        <div class="chapter-info">
+                            <h4>Nhập môn CNXHKH</h4>
+                            <p>Sự ra đời, phát triển và ý nghĩa nghiên cứu</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                    <a href="content.html#chapter2" class="chapter-row">
+                        <span class="chapter-num">02</span>
+                        <div class="chapter-info">
+                            <h4>Sứ mệnh lịch sử GCCN</h4>
+                            <p>Vai trò, đặc điểm và thực hiện sứ mệnh</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                    <a href="content.html#chapter3" class="chapter-row">
+                        <span class="chapter-num">03</span>
+                        <div class="chapter-info">
+                            <h4>CNXH và Thời kỳ quá độ</h4>
+                            <p>Đặc trưng, quá độ và CNXH ở Việt Nam</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                    <a href="content.html#chapter4" class="chapter-row">
+                        <span class="chapter-num">04</span>
+                        <div class="chapter-info">
+                            <h4>Dân chủ XHCN & Nhà nước XHCN</h4>
+                            <p>Bản chất, chức năng và mối quan hệ</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                    <a href="content.html#chapter5" class="chapter-row">
+                        <span class="chapter-num">05</span>
+                        <div class="chapter-info">
+                            <h4>Cơ cấu XH-GC và Liên minh</h4>
+                            <p>Cấu trúc xã hội và liên minh giai tầng</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                    <a href="content.html#chapter6" class="chapter-row">
+                        <span class="chapter-num">06</span>
+                        <div class="chapter-info">
+                            <h4>Dân tộc và Tôn giáo</h4>
+                            <p>Vấn đề trong thời kỳ quá độ</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                    <a href="content.html#chapter7" class="chapter-row">
+                        <span class="chapter-num">07</span>
+                        <div class="chapter-info">
+                            <h4>Gia đình trong TKQĐ</h4>
+                            <p>Xây dựng gia đình Việt Nam hiện nay</p>
+                        </div>
+                        <span class="chapter-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="brand-icon">★</span>
+                        <span>CNXHKH</span>
+                    </div>
+                    <p>Tài liệu học tập dành cho sinh viên FPT University</p>
+                    <p class="copyright">© 2026 Ôn Tập CNXHKH - FPT University</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
