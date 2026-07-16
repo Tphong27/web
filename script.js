@@ -130,7 +130,31 @@ function toggleAnswer(element) {
     }
 }
 
-// ===== QUESTIONS BANK - Parse docs/quiz_75cau_dapan.txt =====
+// ===== SHARED QUESTIONS BANK =====
+const DEFAULT_QUIZ_BANK_SOURCE = 'docs/quiz_gop_da_loc_trung.txt';
+let quizQuestionsPromise = null;
+
+function loadQuizQuestions() {
+    if (quizQuestionsPromise) return quizQuestionsPromise;
+
+    quizQuestionsPromise = (async () => {
+        let txt = (typeof window.QUIZ_BANK_TEXT === 'string') ? window.QUIZ_BANK_TEXT : '';
+        if (!txt) {
+            const source = window.QUIZ_BANK_SOURCE || DEFAULT_QUIZ_BANK_SOURCE;
+            const res = await fetch(source, { cache: 'no-cache' });
+            if (!res.ok) throw new Error(`HTTP ${res.status}: ${source}`);
+            txt = await res.text();
+        }
+
+        const questions = parseQuizTxt(txt);
+        if (!questions.length) throw new Error('Không tìm thấy câu hỏi hợp lệ trong nguồn dữ liệu');
+        return questions;
+    })();
+
+    return quizQuestionsPromise;
+}
+
+// Parse question-bank text into normalized question objects.
 
 function escapeHtml(s) {
     return String(s)
@@ -296,13 +320,7 @@ async function initQuestionsBank() {
 
     let questions = [];
     try {
-        let txt = (typeof window.QUIZ_BANK_TEXT === 'string') ? window.QUIZ_BANK_TEXT : '';
-        if (!txt) {
-            const res = await fetch('docs/quiz_75cau_dapan.txt', { cache: 'no-cache' });
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            txt = await res.text();
-        }
-        questions = parseQuizTxt(txt);
+        questions = await loadQuizQuestions();
     } catch (err) {
         if (loading) loading.hidden = true;
         if (errorEl) errorEl.hidden = false;
@@ -318,6 +336,9 @@ async function initQuestionsBank() {
 
     if (loading) loading.hidden = true;
     bank.hidden = false;
+
+    const totalCount = document.getElementById('count-all');
+    if (totalCount) totalCount.textContent = questions.length;
 
     renderBank(questions, '');
     applyFilterAndSearch();
@@ -408,7 +429,6 @@ function initContentNavigation() {
 // ===== QUIZ PAGE =====
 const QUIZ_MODE_TITLES = {
     random30: 'Bài thi ngẫu nhiên (30 câu)',
-    all75: 'Bài thi tổng (75 câu)',
 };
 
 let quizState = null;
@@ -419,13 +439,7 @@ async function initQuizPage() {
 
     let questions = [];
     try {
-        let txt = (typeof window.QUIZ_BANK_TEXT === 'string') ? window.QUIZ_BANK_TEXT : '';
-        if (!txt) {
-            const res = await fetch('docs/quiz_75cau_dapan.txt', { cache: 'no-cache' });
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            txt = await res.text();
-        }
-        questions = parseQuizTxt(txt);
+        questions = await loadQuizQuestions();
     } catch (err) {
         console.error('Quiz: không tải được ngân hàng câu hỏi:', err);
         return;
@@ -435,6 +449,13 @@ async function initQuizPage() {
         console.error('Quiz: ngân hàng câu hỏi rỗng');
         return;
     }
+
+    const bankSummary = document.getElementById('quizBankSummary');
+    const allTitle = document.getElementById('quizAllTitle');
+    const allDescription = document.getElementById('quizAllDescription');
+    if (bankSummary) bankSummary.textContent = `Nguồn câu hỏi lấy từ ngân hàng ${questions.length} câu trắc nghiệm CNXHKH`;
+    if (allTitle) allTitle.textContent = `Tổng ${questions.length} câu`;
+    if (allDescription) allDescription.textContent = `Làm toàn bộ ${questions.length} câu theo thứ tự từ 1 đến ${questions.length}`;
 
     // Disable nút không có đủ câu
     document.querySelectorAll('.quiz-mode-card').forEach(btn => {
@@ -491,7 +512,9 @@ function startQuiz(allQuestions, mode) {
 
     document.getElementById('quizModeSelect').hidden = true;
     document.getElementById('quizRunner').hidden = false;
-    document.getElementById('quizModeTitle').textContent = QUIZ_MODE_TITLES[mode] || '';
+    document.getElementById('quizModeTitle').textContent = mode === 'random30'
+        ? QUIZ_MODE_TITLES.random30
+        : `Bài thi tổng (${list.length} câu)`;
 
     renderCurrentQuestion();
 }

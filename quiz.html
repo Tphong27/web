@@ -89,17 +89,17 @@
                 <!-- Mode selector -->
                 <div id="quizModeSelect" class="quiz-mode-select">
                     <h2>Chọn chế độ làm bài</h2>
-                    <p class="quiz-mode-subtitle">Nguồn câu hỏi lấy từ ngân hàng 75 câu trắc nghiệm CNXHKH</p>
+                    <p class="quiz-mode-subtitle" id="quizBankSummary">Nguồn câu hỏi lấy từ ngân hàng 101 câu trắc nghiệm CNXHKH</p>
                     <div class="quiz-mode-grid">
                         <button class="quiz-mode-card" data-mode="random30">
                             <div class="mode-icon">🎲</div>
                             <h3>Ngẫu nhiên 30 câu</h3>
                             <p>Hệ thống chọn ngẫu nhiên 30 câu từ ngân hàng</p>
                         </button>
-                        <button class="quiz-mode-card" data-mode="all75">
+                        <button class="quiz-mode-card" data-mode="all">
                             <div class="mode-icon">📚</div>
-                            <h3>Tổng 75 câu</h3>
-                            <p>Làm toàn bộ 75 câu theo thứ tự từ 1 đến 75</p>
+                            <h3 id="quizAllTitle">Tổng 101 câu</h3>
+                            <p id="quizAllDescription">Làm toàn bộ 101 câu theo thứ tự từ 1 đến 101</p>
                         </button>
                     </div>
                 </div>
