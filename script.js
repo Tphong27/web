@@ -350,7 +350,60 @@ async function initQuestionsBank() {
 document.addEventListener('DOMContentLoaded', () => {
     initQuestionsBank();
     initQuizPage();
+    initContentNavigation();
 });
+
+// ===== CONTENT PAGE CHAPTER NAVIGATION =====
+function initContentNavigation() {
+    const nav = document.querySelector('.content-page .chapter-nav');
+    if (!nav) return;
+
+    const links = Array.from(nav.querySelectorAll('a[href^="#chapter"]'));
+    const sections = links
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+    if (!sections.length) return;
+
+    let ticking = false;
+    let activeId = '';
+
+    function updateActiveChapter() {
+        const marker = window.innerWidth <= SIDEBAR_MOBILE_BREAKPOINT ? 150 : 110;
+        let active = sections[0];
+
+        sections.forEach(section => {
+            if (section.getBoundingClientRect().top <= marker) active = section;
+        });
+
+        if (active.id !== activeId) {
+            activeId = active.id;
+            links.forEach(link => {
+                const isCurrent = link.getAttribute('href') === `#${activeId}`;
+                link.classList.toggle('current', isCurrent);
+                if (isCurrent) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            });
+
+            const currentLink = nav.querySelector('.chapter-nav-item.current');
+            if (currentLink && nav.scrollWidth > nav.clientWidth) {
+                nav.scrollTo({
+                    left: currentLink.offsetLeft - (nav.clientWidth - currentLink.clientWidth) / 2,
+                    behavior: 'smooth',
+                });
+            }
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            ticking = true;
+            window.requestAnimationFrame(updateActiveChapter);
+        }
+    }, { passive: true });
+
+    updateActiveChapter();
+}
 
 // ===== QUIZ PAGE =====
 const QUIZ_MODE_TITLES = {
