@@ -15,7 +15,7 @@
                 <span class="brand-icon">★</span>
                 <span class="brand-text">CNXHKH</span>
             </div>
-            <button class="sidebar-toggle" onclick="toggleSidebar()">
+            <button class="sidebar-toggle" type="button" onclick="toggleSidebar()" aria-label="Thu gọn thanh điều hướng" aria-controls="sidebar" aria-expanded="true">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -63,7 +63,7 @@
     <main class="main-content">
         <!-- Mobile Header -->
         <header class="mobile-header">
-            <button class="mobile-menu-toggle" onclick="toggleSidebar()">
+            <button class="mobile-menu-toggle" type="button" onclick="toggleSidebar()" aria-label="Mở thanh điều hướng" aria-controls="sidebar" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -72,7 +72,7 @@
         </header>
 
         <!-- Mobile Overlay -->
-        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()" aria-hidden="true"></div>
 
         <!-- Page Header -->
         <header class="page-header">

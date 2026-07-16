@@ -1,26 +1,110 @@
 // ===== SIDEBAR TOGGLE =====
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebarOverlay');
+const SIDEBAR_MOBILE_BREAKPOINT = 1024;
 
-    if (sidebar && overlay) {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+function isMobileSidebar() {
+    return window.innerWidth <= SIDEBAR_MOBILE_BREAKPOINT;
+}
+
+function getSavedSidebarState() {
+    try {
+        return localStorage.getItem('sidebar-collapsed') === 'true';
+    } catch (error) {
+        return false;
     }
 }
 
-// Close sidebar when clicking on overlay
-document.addEventListener('click', function(e) {
+function saveSidebarState(isCollapsed) {
+    try {
+        localStorage.setItem('sidebar-collapsed', String(isCollapsed));
+    } catch (error) {
+        // The sidebar still works when storage is unavailable (for example file:// privacy restrictions).
+    }
+}
+
+function updateSidebarA11y(isOpen, isCollapsed) {
+    const desktopToggle = document.querySelector('.sidebar-toggle');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+
+    if (desktopToggle) {
+        desktopToggle.setAttribute('aria-expanded', String(isMobileSidebar() ? isOpen : !isCollapsed));
+        desktopToggle.setAttribute('aria-label', isMobileSidebar() ? 'Đóng thanh điều hướng' : (isCollapsed ? 'Mở rộng thanh điều hướng' : 'Thu gọn thanh điều hướng'));
+    }
+    if (mobileToggle) {
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileToggle.setAttribute('aria-label', isOpen ? 'Đóng thanh điều hướng' : 'Mở thanh điều hướng');
+    }
+}
+
+function setMobileSidebar(isOpen) {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebarOverlay');
+    const mainContent = document.querySelector('.main-content');
+    if (!sidebar || !overlay) return;
 
-    if (overlay && overlay.classList.contains('show')) {
-        if (!sidebar.contains(e.target)) {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('show');
-        }
+    sidebar.classList.toggle('open', isOpen);
+    sidebar.classList.remove('collapsed');
+    if (mainContent) mainContent.classList.remove('expanded');
+    overlay.classList.toggle('show', isOpen);
+    overlay.setAttribute('aria-hidden', String(!isOpen));
+    document.body.classList.toggle('sidebar-open', isOpen);
+    updateSidebarA11y(isOpen, false);
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('.main-content');
+    if (!sidebar) return;
+
+    if (isMobileSidebar()) {
+        setMobileSidebar(!sidebar.classList.contains('open'));
+        return;
+    }
+
+    const isCollapsed = sidebar.classList.toggle('collapsed');
+    if (mainContent) mainContent.classList.toggle('expanded', isCollapsed);
+    saveSidebarState(isCollapsed);
+    updateSidebarA11y(false, isCollapsed);
+}
+
+function closeSidebar() {
+    if (isMobileSidebar()) setMobileSidebar(false);
+}
+
+function initSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('.main-content');
+    if (!sidebar) return;
+
+    if (isMobileSidebar()) {
+        setMobileSidebar(false);
+    } else {
+        const isCollapsed = getSavedSidebarState();
+        sidebar.classList.toggle('collapsed', isCollapsed);
+        if (mainContent) mainContent.classList.toggle('expanded', isCollapsed);
+        updateSidebarA11y(false, isCollapsed);
+    }
+}
+
+let sidebarWasMobile = isMobileSidebar();
+window.addEventListener('resize', function() {
+    const isMobile = isMobileSidebar();
+    if (isMobile !== sidebarWasMobile) {
+        sidebarWasMobile = isMobile;
+        initSidebar();
     }
 });
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSidebar();
+});
+
+document.addEventListener('click', function(e) {
+    if (!isMobileSidebar()) return;
+    const navLink = e.target.closest('.sidebar a:not(.has-submenu)');
+    if (navLink) closeSidebar();
+});
+
+initSidebar();
 
 // ===== CHAPTER SUBMENU TOGGLE =====
 function toggleChapterMenu(event) {
