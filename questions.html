@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="questions-page">
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
@@ -86,18 +86,39 @@
         <div class="content-wrapper">
             <div class="container">
 
-                <!-- Search Bar -->
-                <div class="search-bar">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="searchInput" placeholder="Tìm kiếm trong câu hỏi, đáp án và đáp án đúng..." autocomplete="off" />
-                    <button class="search-clear" id="searchClear" title="Xóa">✕</button>
-                </div>
-                <div class="search-meta" id="searchMeta"></div>
+                <!-- Search Tools -->
+                <section class="question-tools" aria-labelledby="questionSearchTitle">
+                    <div class="search-panel-heading">
+                        <div>
+                            <span class="search-eyebrow">Tra cứu nhanh</span>
+                            <h2 id="questionSearchTitle">Tìm trong ngân hàng câu hỏi</h2>
+                        </div>
+                        <div class="filter-bar">
+                            <button class="filter-btn active" data-filter="all">Tổng cộng <span class="count" id="count-all">101</span> câu hỏi</button>
+                        </div>
+                    </div>
 
-                <!-- Filter Buttons -->
-                <div class="filter-bar">
-                    <button class="filter-btn active" data-filter="all">Tổng cộng <span class="count" id="count-all">101</span> câu hỏi</button>
-                </div>
+                    <div class="search-bar">
+                        <label class="sr-only" for="searchInput">Nhập từ khóa tìm kiếm</label>
+                        <span class="search-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+                                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"></circle>
+                                <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                            </svg>
+                        </span>
+                        <input type="search" id="searchInput" placeholder="Nhập câu hỏi, nội dung đáp án hoặc từ khóa..." autocomplete="off" aria-describedby="searchHint searchMeta" />
+                        <button class="search-clear" id="searchClear" type="button" title="Xóa tìm kiếm" aria-label="Xóa từ khóa tìm kiếm">
+                            <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true">
+                                <path d="m6 6 8 8m0-8-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="search-support">
+                        <span class="search-hint" id="searchHint">Kết quả được lọc ngay khi bạn nhập</span>
+                        <div class="search-meta" id="searchMeta" aria-live="polite"></div>
+                    </div>
+                </section>
 
                 <!-- Loading State -->
                 <div class="bank-loading" id="bankLoading">
